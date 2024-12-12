@@ -39,8 +39,6 @@ public class DancerProcessServlet extends HttpServlet {
         DancerList.addDancer(dancer);
 
         List<Dancer> dancerList = DancerList.getDancerList();
-
-
         System.out.println("dancerList = " + dancerList);
 
         resp.setContentType("text/html");
