@@ -44,6 +44,22 @@ pageEncoding="UTF-8"%>
     </ul>
   
     <a href="/mvc/v1/register">다시 등록하기</a>
+
+    <script>
+      const $dancerList = document.getElementById('dancer-list');
+      $dancerList.addEventListener('click',e =>{
+        if(!e.target.matches('.del-btn')) return;
+
+        const $ul = e.target.closest('ul'); 
+        const index = Array.from($ul.children).indexOf(e.target.parentNode);
+        console.log(index);
+
+        //삭제 요청보내기
+        // window.location.href =`/mvc/v1/remove?id=`+index;
+        window.location.href =`/mvc/v1/remove?id=\${index}`;
+        
+      })
+    </script>
   </body>
   
 </html>
